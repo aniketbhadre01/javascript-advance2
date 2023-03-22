@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>javascript templete litrals </h2>
+    <p>templete liotral allow variable in strings</p>
+    <p id="demo"></p>
+    <script>
+       let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+document.getElementById("demo").innerHTML = total;
+//for calculating tax and use for application for tax or billing use this logic 
+    </script>
+</body>
+</html>

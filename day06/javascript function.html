@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>funcrtion example</h1>
+    <p id="demo"></p>
+    <script>
+      //function is block of code to perform particular task
+      //function is excuted onces it is invoked/call
+      function myfunction(arg1, arg2) {
+        //block of code perform some task
+        
+        console.log("myfunction::", arg1, arg2); //statment1
+        return arg1 * arg2; //statment2
+      }
+      const result1 = myfunction(400,100);
+      
+      console.log("the result is ::", result1);
+      document.getElementById("demo").innerHTML = myfunction(2000,700);
+    </script>
+  </body>
+</html>

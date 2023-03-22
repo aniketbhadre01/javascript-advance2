@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>javascript arrays</h2>
+    <h2>splice method</h2>
+    <p>the splice methode can be used for remove element of arrays</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      const fruites = ["banana", "apple", "kiwi", "mango"];
+      document.getElementById("demo1").innerHTML = fruites;
+      fruites.splice(3, 0);
+      document.getElementById("demo2").innerHTML = fruites;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>objects</h1>
+    <p id="demo"></p>
+    <script>
+      //object creacted
+      const persone = {
+        firstname: "aniket",
+        lastname: "bhadre",
+        age: 23,
+        eyecolor: "brown",
+        //annamnumos function
+        fullname: function () {
+          return this.firstname + " " + this.lastname;  //+use as concodination
+        },
+      };
+      //as execpted another form of written object code
+      //and here we accese the object properties
+      console.log(persone.lastname);
+      console.log(persone["firstname"]);
+      console.log(persone["lastname"]);
+      console.log(["age"]);
+      console.log([eyecolor]);
+
+      document.getElementById("demo").innerHTML = persone.fullname();
+    </script>
+  </body>
+</html>
