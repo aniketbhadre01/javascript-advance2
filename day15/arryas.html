@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> arrays sorting </h1>
+    <input id="numInputId" type="number" placeholder="enter number" />
+    <input type="text" placeholder="enter fruits">
+    <button onclick="onaddfruitsclicked()"> add the fruits to the array</button>
+    <button onclick="onaddnumberclick()"> add number to the arrays</button>
+    <br/>
+    <p id="numId"></p>
+    <script>
+        const numbersarrays=[];
+        const paregraphnumelement=document.getElementById("numId");
+        console.log("paregraphNumElement" ,paregraphnumelement);
+        const inputnumberelement =document.getElementById("numInputId");
+        paregraphnumelement.innerHTML =numbersarrays.join("|");
+        function onaddnumberclick() {
+            console.log("value of input box", inputnumberelement.value);
+            numbersarrays.push();
+
+           //block code
+        }
+    </script>
+</body>
+</html>

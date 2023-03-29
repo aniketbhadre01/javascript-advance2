@@ -1,0 +1,595 @@
+<html>
+ <head> </head>
+<link id="favicon" rel="shortcut icon" type="image/png" href="" />
+  
+<script src='js/onlineAppForm/jquery-1.11.1.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery-migrate-1.2.1.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery-ui-1.10.4.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery.tabs.pack.js' type="text/javascript"></script>
+ 		
+<script src='/captchaservice/js/captchaService.js' type="text/javascript"></script>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ 
+
+ 		
+<link rel="stylesheet" type="text/css" href="/captchaservice/css/captchaservice.css" />
+ 		
+<link rel="stylesheet" type="text/css" href="css/onlineApplicationForm/jquery.tabs.css" />
+ 		
+<link rel="stylesheet" href="css/onlineApplicationForm/form79664/main.css?v=15" type="text/css" />
+
+ 		
+<script src='js/onlineAppForm/jquery-1.11.1.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery-migrate-1.2.1.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery-ui-1.10.4.min.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/jquery.tabs.pack.js' type="text/javascript"></script>
+ 		
+<script src='/captchaservice/js/captchaService.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/formMaster.js' type="text/javascript"></script>
+ 		
+<script src='js/onlineAppForm/form79664.js?v=15' type="text/javascript"></script>
+
+ 
+<script src="/EForms/js/onlineAppForm/jsencrypt.js"></script>
+ <script>	
+
+
+ $(document).ready(function(){
+	resetCookieFW();
+	 $.extend({
+	     getUrlVars: function(){
+	       var vars = [], hash;
+	       var hashes = window.location.search.slice(window.location.search.indexOf('?') + 1).split('&');
+	       for(var i = 0; i < hashes.length; i++)
+	       {
+	         hash = hashes[i].split('=');
+	         vars.push(hash[0]);
+	         vars[hash[0]] = hash[1];
+	       }
+	       return vars;
+	     },
+	     getUrlVar: function(name){
+	       return $.getUrlVars()[name];
+	     }
+	   });
+	 
+		var redirectToOtherSoln = $.getUrlVar('action');
+		if(redirectToOtherSoln!=undefined && redirectToOtherSoln=="redirectToLX"){
+			var allVars = $.getUrlVars();
+			for(var i=0;i<allVars.length;i++){
+				document.cookie=allVars[i]+"_iONEForms="+$.getUrlVar(allVars[i])+"; path=/";
+			}
+		}
+		
+ });
+ 
+
+		</script>
+ <script type="text/javascript">
+function clearBrowserCache(){
+	//Page.ClientScript.RegisterStartupScript(this.GetType(),"cle","windows.history.clear",true);
+	//Response.Cache.SetCacheability(HttpCacheability.NoCache);
+	//Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+	//Response.Cache.SetNoStore();
+}
+function resetCookieFW(){
+	var now = new Date();
+    now.setMonth( now.getMonth() - 1 );
+	document.cookie="action_iONEForms= ; expires="+now.toUTCString() +"; path=/";
+}
+	 
+function loader(){
+	document.getElementById('loader-indicator').style.display="";
+}
+function fnNormalChangePassword(){
+	if(document.getElementById("userid").value == ''){
+		alert("Please Enter 'Application Sequence Number/User Id'. ");
+		return false;
+	}else if(document.getElementById("confData").value == ''){
+		alert("Please Enter 'Password'. ");
+		return false;
+	}else{
+		var appSequenceNo=document.getElementById("userid").value;
+		document.loginForm.method="POST";
+		document.loginForm.action="loginAction.do?subAction=ValidateUser&normalPwdChange=Y";
+		document.loginForm.submit();
+	}
+}
+function showChangePwdMsg(){
+	//alert("1");
+	//alert("2"+document.getElementById("changePwd_success").value);
+	if(document.getElementById("changePwd_success").value == 'Y'){
+		alert("Your Password has been changed successfully. Please login again.");
+	}
+	else if(document.getElementById("changePwd_success").value == 'N')
+		{
+		alert("Your Password did not changed. Please try again.");
+		}
+}
+function setHashValue()
+{
+
+
+ 
+  var tempString='';
+ var tempStringArray=tempString.split('--@@js@@--');
+ var mydivelement=""
+ for(var i=0;i<tempStringArray.length-1;i++)
+ {
+   var input="<input type='hidden' id='hash"+i+"' name='hash"+i+"' value='"+tempStringArray[i]+"'/>";
+    mydivelement=mydivelement+input;        
+ 
+ }
+ document.getElementById('mydiv').innerHTML=mydivelement;
+ 
+ if(typeof window.setValue == 'function') {
+	// function exists, so we can now call it
+	setValue();
+	
+}
+
+}
+</script>
+ </head>
+
+<body onload="setHashValue();clearBrowserCache();showChangePwdMsg();" onpageshow="if (event.persisted) noBack();" onunload="">
+
+  <form name="loginForm" method="post" action="/EForms/loginAction.do" enctype="multipart/form-data">
+
+   
+  
+  
+
+ 
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/onlineApplicationForm/bootstrap.css">
+<link rel="stylesheet" href="css/onlineApplicationForm/jquery.tabs.css">
+<link rel="stylesheet" href="css/onlineApplicationForm/bootstrap-select.min.css">
+<link rel="stylesheet" type="text/css" href="/captchaservice/css/captchaservice.css" />
+
+<script type="text/javascript" src="/captchaservice/js/captchaService.js"></script>
+<script type="text/javascript" src="js/onlineAppForm/bootstrap-select.js"></script>
+
+<style>
+	body {
+		background-color: rgb(93, 155, 251);
+	}
+
+	input[type="button"] {
+		color: #337ab7;
+	}
+
+	input[type="button"]:hover {
+		text-decoration: underline !important;
+	}
+</style>
+<script type="text/javascript">
+	$(function () {
+		/*Input error functionality*/
+		$('.mandatoryinput').on('click', function () {
+			if ($(this).val() == "") {
+				$(this).parent().find('.errortxt').css('display', 'inline');
+				$(this).addClass('borderredcolor');
+			}
+			else {
+				$(this).parent().find('.errortxt').css('display', 'none');
+				$(this).removeClass('borderredcolor');
+			}
+		});
+		$('.mandatoryinput').on('blur', function () {
+			if ($(this).val() != "") {
+				$(this).parent().find('.errortxt').css('display', 'none');
+				$(this).removeClass('borderredcolor');
+				$(this).css('color', '#333');
+			}
+
+		});
+		$('input').on('blur', function () {
+			if ($(this).val() != "") {
+				$(this).css('color', '#333');
+			}
+
+		});
+		$('input').on("keypress", function () {
+
+			$(this).parent().find('.errortxt').css('display', 'none');
+			$(this).removeClass('borderredcolor');
+			$(this).css('color', '#333');
+
+		});
+
+		$('.mandatoryselect').on('shown.bs.select', function (e) {
+			//alert($(this).next().find('button .filter-option').text());
+			if ($(this).next().find('button .filter-option').text() == $(this).attr('title')) {
+				$(this).parent().find('.errortxt').css('display', 'inline');
+				$(this).next().addClass('borderredcolor1');
+				$(this).next().find('button').addClass('borderredcolor');
+			}
+			else {
+				$(this).parent().find('.errortxt').css('display', 'none');
+				$(this).next().removeClass('borderredcolor1');
+				$(this).next().find('button').removeClass('borderredcolor');
+			}
+		});
+
+		$('.mandatoryselect').on('changed.bs.select', function () {
+			//alert(($(this).next().find('button .filter-option').text() +" sdasd"+ $(this).attr('title')));
+			if ($(this).next().find('button .filter-option').text() != $(this).attr('title')) {
+				$(this).parent().find('.errortxt').css('display', 'none');
+				$(this).next().removeClass('borderredcolor1');
+				$(this).next().find('button').removeClass('borderredcolor');
+			}
+		});
+
+	});
+
+	//fnloginwithoutcaptcha
+
+	function fnLogin() {
+		if (document.getElementById("userid").value == '') {
+			alert("Please Enter 'Roll number'. ");
+			return false;
+		} else if (document.getElementById("confData").value == '') {
+			alert("Please Enter 'Password'. ");
+			return false;
+		}
+		else {
+			document.loginForm.method = "POST";
+			document.loginForm.action = "/EForms/loginAction.do?subAction=ValidateUser";
+			document.loginForm.submit();
+		}
+	}
+
+
+	
+	//fnloginwithcaptcha
+	
+	function fnLogin222() {
+	 	if (document.getElementById("userid").value == '') {
+	 		alert("Please Enter 'Roll number'. ");
+	 		return false;
+	 	} else if (document.getElementById("confData").value == '') {
+	 		alert("Please Enter 'Password'. ");
+	 		return false;
+	 	} else {
+	 		if ($('#loginCaptchaHolder').length) {
+	 			var key = $('#loginCaptchaHolder #captchaService_imageKey').val();
+	 			var answer = $('#loginCaptchaHolder #captchaService_answer').val();
+	 			if (answer == '') { alert("Please enter the Captcha."); return false; }
+
+	 			$.post("/EForms/IonCaptchaValidation", { "captchaService_imageKey": key, "captchaService_answer": answer, 'appId': 30 })
+	 				.done(function (check) {
+	 					if (check.indexOf('Valid') === -1) {
+	 						alert("Please enter correct text shown in image"); init_captcha_login();
+	 						return false;
+	 					}
+	 					setTimeout(loader, 1000);
+	 					document.loginForm.method = "POST";
+	 					document.loginForm.action = "/EForms/loginAction.do?subAction=ValidateUser";
+	 					document.loginForm.submit();
+	 				});
+	 		}
+	 	}
+	 }
+
+	function showForgotPwd() {
+		document.getElementById('forgotPwdDiv').style.display = '';
+	}
+	function changePwd() {
+		document.loginForm.method = "POST";
+		document.loginForm.action = "/EForms/loginAction.do?subAction=CandidateChangePassword";
+		document.loginForm.submit();
+	}
+	function showChangePwdMsg() {
+		if (document.getElementById("changePwd_success").value == 'Y') {
+			alert("Your Passowrd has been changed successfully. Please login again.");
+		}
+	}
+
+	function setHashValue() {
+		var tempString = '';
+		var tempStringArray = tempString.split('--@@js@@--');
+		var mydivelement = ""
+		for (var i = 0; i < tempStringArray.length - 1; i++) {
+			var input = "<input type='hidden' id='hash" + i + "' name='hash" + i + "' value='" + tempStringArray[i] + "'/>";
+			mydivelement = mydivelement + input;
+		}
+		document.getElementById('mydiv').innerHTML = mydivelement;
+		if (typeof window.setValue == 'function') {
+			// function exists, so we can now call it
+			setValue();
+		}
+	}
+
+	function callValidateEFormsFWIonCaptchaForForgotPWD() {
+		if ($("#useridForgotPwd").val() == null || $("#useridForgotPwd").val() == "") {
+			alert("Please enter User Id.");
+			return false;
+		}
+		else {
+			validateEFormsFWIonCaptchaForForgotPWD('forgotPassword');
+		}
+	}
+
+	function checkBrowser() {
+		var navUserAgent = navigator.userAgent;
+		var browserName = navigator.appName;
+		var browserVersion = '' + parseFloat(navigator.appVersion);
+		var majorVersion = parseInt(navigator.appVersion, 10);
+		var tempNameOffset, tempVersionOffset, tempVersion;
+
+
+		if ((tempVersionOffset = navUserAgent.indexOf("Opera")) != -1) {
+			browserName = "Opera";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 6);
+			if ((tempVersionOffset = navUserAgent.indexOf("Version")) != -1)
+				browserVersion = navUserAgent.substring(tempVersionOffset + 8);
+		} else if ((tempVersionOffset = navUserAgent.indexOf("MSIE")) != -1) {
+			browserName = "Microsoft Internet Explorer";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 5);
+		} else if ((tempVersionOffset = navUserAgent.indexOf("trident")) != -1 || (tempVersionOffset = navUserAgent.indexOf("Trident")) != -1) {
+			browserName = "Microsoft Internet Explorer";
+			//browserVersion = navUserAgent.substring(tempVersionOffset+5);
+			var rv = navUserAgent.indexOf('rv:');
+			browserVersion = parseInt(navUserAgent.substring(rv + 3, navUserAgent.indexOf('.', rv)), 10);
+			browserVersion = browserVersion + ";";
+		}
+		else if ((tempVersionOffset = navUserAgent.indexOf("Edge")) != -1) {
+			browserName = "Edge";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 5);
+		}
+		else if ((tempVersionOffset = navUserAgent.indexOf("Edg")) != -1) {
+			browserName = "Edge Chromium";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 4);
+		}
+
+		else if ((tempVersionOffset = navUserAgent.indexOf("Chrome")) != -1) {
+			browserName = "Chrome";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 7);
+		} else if ((tempVersionOffset = navUserAgent.indexOf("Safari")) != -1) {
+			browserName = "Safari";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 7);
+			if ((tempVersionOffset = navUserAgent.indexOf("Version")) != -1)
+				browserVersion = navUserAgent.substring(tempVersionOffset + 8);
+		} else if ((tempVersionOffset = navUserAgent.indexOf("Firefox")) != -1) {
+			browserName = "Firefox";
+			browserVersion = navUserAgent.substring(tempVersionOffset + 8);
+		} else if ((tempNameOffset = navUserAgent.lastIndexOf(' ') + 1) < (tempVersionOffset = navUserAgent.lastIndexOf('/'))) {
+			browserName = navUserAgent.substring(tempNameOffset, tempVersionOffset);
+			browserVersion = navUserAgent.substring(tempVersionOffset + 1);
+			if (browserName.toLowerCase() == browserName.toUpperCase()) {
+				browserName = navigator.appName;
+			}
+		}
+
+		// trim version
+		if ((tempVersion = browserVersion.indexOf(";")) != -1)
+			browserVersion = browserVersion.substring(0, tempVersion);
+		if ((tempVersion = browserVersion.indexOf(" ")) != -1)
+			browserVersion = browserVersion.substring(0, tempVersion);
+
+		var splitBrowserVersion = browserVersion.split(".");
+		var browserVersionInt = Number(splitBrowserVersion[0]);
+
+		console.log("BrowserName = " + browserName + "\n" + "Version = " + browserVersionInt);
+
+		if (browserName != "Chrome" && browserName != "Firefox" && browserName != "Edge Chromium") {
+			alert("The requested web resource is not supported on your browser. \n\n This site is best viewed in : \n\n 1) Edge Chromium\n 2) Google Chrome (version 59 and above)\n 3) Mozilla Firefox (version 56 and above).");
+			document.body.innerHTML = '';
+			$('body').append("<div style='width:100%;color: red;/* text-align: center; */'><p style='text-align: center;font-size: 200%;font-weight: bold;'>The requested web resource is not supported on your browser !!!</p> <br><p style='text-align: left;font-size: 150%;font-weight: bold;margin-left: 30%;margin-top: 0px;'>This site is best viewed in : <br> 1) Edge Chromium<br> 2) Google Chrome (version 59 and above)<br> 3) Mozilla Firefox (version 56 and above).</p></div>");
+		}
+		else {
+			if (browserName == "Chrome" && browserVersionInt < 59) {
+				alert("The requested web resource is not supported on your browser. \n\n This site is best viewed in : \n\n 1) Edge Chromium\n 2) Google Chrome (version 59 and above)\n 3) Mozilla Firefox (version 56 and above).");
+				document.body.innerHTML = '';
+				$('body').append("<div style='width:100%;color: red;/* text-align: center; */'><p style='text-align: center;font-size: 200%;font-weight: bold;'>The requested web resource is not supported on your browser !!!</p> <br><p style='text-align: left;font-size: 150%;font-weight: bold;margin-left: 30%;margin-top: 0px;'>This site is best viewed in : <br> 1) Edge Chromium<br> 2) Google Chrome (version 59 and above)<br> 3) Mozilla Firefox (version 56 and above).</p></div>");
+			}
+			else if (browserName == "Firefox" && browserVersionInt < 56) {
+				alert("The requested web resource is not supported on your browser. \n\n This site is best viewed in : \n\n 1) Edge Chromium\n 2) Google Chrome (version 59 and above)\n 3) Mozilla Firefox (version 56 and above).");
+				document.body.innerHTML = '';
+				$('body').append("<div style='width:100%;color: red;/* text-align: center; */'><p style='text-align: center;font-size: 200%;font-weight: bold;'>The requested web resource is not supported on your browser !!!</p> <br><p style='text-align: left;font-size: 150%;font-weight: bold;margin-left: 30%;margin-top: 0px;'>This site is best viewed in : <br> 1) Edge Chromium<br> 2) Google Chrome (version 59 and above)<br> 3) Mozilla Firefox (version 56 and above).</p></div>");
+			}
+		}
+
+
+	}
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('input, :input focus').attr('autocomplete', 'off'); setTimeout("checkBrowser();", 1000);
+	});
+	$('input, :input').attr('autocomplete', 'off');
+
+	function forpwd() {
+		$('#forgotPwdDiv').show();
+		$('.forgot').attr('id', 'captchaHolder');
+		$('.login').removeAttr('id', 'loginCaptchaHolder');
+		$('.login').html('');
+		$('#changepwd').hide();
+		$('#log').hide();
+	}
+	function chnpwd() {
+		$('#changepwd').show();
+		$('#forgotPwdDiv').hide();
+		$('#log').hide();
+	}
+
+	function log() {
+		$('.forgot').removeAttr('id', 'captchaHolder');
+		$('.login').attr('id', 'loginCaptchaHolder');
+		$('.forgot').html('');
+		$('#forgotPwdDiv').hide();
+		$('#changepwd').hide();
+		$('#log').show();
+		init_captcha_login();
+	}
+</script>
+
+<bean:define id="orgId" name="loginForm" property="orgId" />
+<bean:define id="formId" name="loginForm" property="formId" />
+<html:html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Combined Higher Secondary Level Examination 2022 Tier I</title>
+	</head>
+
+	<html:body>
+		<html:form name="formL">
+			<div class="listbannerarea">
+				<div class="container-fluid">
+					<div class="" style="text-align:center">
+						<h2 class="removemarginbottom" id="head_title" style="margin-left:-25px"></h2>
+					</div>
+				</div>
+			</div>
+
+			<section class="wrpdashboard" style="">
+				<!-- for eform  -->
+				<div class="container-fluid">
+					<!--Login-container Tab-->
+					<div class="Login-container">
+						<div id="inner" class="login_body">
+							<h2 style="color:black;">Candidate Login</h2>
+							<!-- <h3>Login to Fill / Submit / View Application Form</h3> -->
+							<div class="logintab-container" style="background-color:white;">
+								<div class="row">
+
+									<div class="notes" style="color:red;" align="center" id="ERROR_PLACE_DIV"></div>
+
+								</div>
+								<div class="row" id="log">
+
+									<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12">
+										<div class="form-group">
+											<label>Roll number ( As per Admission Certificate)<i
+													class="redTxt">*</i></label>
+											<input type="text" placeholder="Enter User Id" maxlength="30" id="userid"
+												name="userid" class="form-control mandatoryinput">
+											<span class="errortxt">Please enter the User Id.</span>
+										</div>
+									</div>
+
+
+
+									<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12">
+										<div class="form-group">
+											<label>Password (As per Admission Certificate)<i
+													class="redTxt">*</i></label>
+											<input type="password" placeholder="Enter Password" id="confData"
+												maxlength="30" name="confData" class="form-control mandatoryinput">
+											<span class="errortxt">Please enter the Password.</span>
+										</div>
+									</div>
+
+									<!-- <div class="col-lg-12 col-sm-12 col-xs-12" id="capcha">
+							
+									<div class="col-md-5" style="align-text:center;height:inherit;width:100%" align="center" >
+										<div id="loginCaptchaHolder" class="login" style="padding-left:0px;" ></div>
+									</div>
+						</div> -->
+
+									<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12" style="height:inherit;">
+										<!--Button-->
+										<div class="row btndiv btndivlogin">
+											<div class="width100">
+												<a onclick="fnLogin()"
+													style="margin-left:170px;margin-right:15px;">Login</a>
+											</div>
+										</div>
+										<!-- <input type="button" onclick="showForgotPwd();forpwd();init_captcha();" style="cursor: pointer; color: rgb(51, 122, 183) ! important; border: 0px none; background: transparent none repeat scroll 0% 0%; font-style: italic; font-size: 13px;" value="Forgot Password?" name="button2"/>
+
+						  <a class="forgetpwd" target="_blank" id="" href="/EForms/loginAction.do?subAction=CandidateChangePassword&orgId=1815&formId=75347" style="margin-left:0px;">Change Password?</a> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="hinttext" align="center">Version 14.04.01</div>
+
+						</div>
+					</div>
+				</div>
+				<input type="hidden" id="payment_status" name="payment_status" />
+			</section>
+			<script type="text/javascript">
+			</script>
+		</html:form>
+	</html:body>
+</html:html>
+  
+  
+     
+   
+   
+    
+	<input type="hidden" id="error_message" name="error_message" value='* The login id and password combination does not match. '/> 
+    <script>
+    if(typeof window.fnLoginAfterLogin == 'function') {
+		fnLoginAfterLogin();
+	}
+	else 
+		{
+		document.getElementById("ERROR_PLACE_DIV").innerHTML = '* The login id and password combination does not match. '; 
+		var staticKey = "* The login id and password combination does not match. ";
+		staticKey = staticKey.trim();
+		$('#ERROR_PLACE_DIV').attr('data-multilingualId',staticKey);
+		$('#ERROR_PLACE_DIV').attr('data-multilingualDisplayType','html');
+		
+		}
+	</script>
+	
+	<input type="hidden" name="loginHtmlPath" value="/html/form79664/login.html">
+	<input type="hidden" name="orgId" value="2207">
+	<input type="hidden" name="formId" value="79664">
+	<input type="hidden" name="userID" value="">
+	<input type="hidden" name="formLanguage" value="">
+	<input type="hidden" name="isPwdGenerationReq" value="N">
+	<input type="hidden" id="withdrawalFormId" name="withdrawalFormId" value=''/>
+	<input type="hidden" id="redirectFormId" name="redirectFormId" value=''/>
+	<input type="hidden" id="hash" name="hash" value=''/>
+	<input type="hidden" id="mobileGetPwd" name="mobileGetPwd" value=""/>
+	<input type="hidden" id="changePwd_success" name="changePwd_success" value='null'/>
+	<input type="hidden" id="copyrightYear" name="copyrightYear" value='2023'/>
+	<input type="hidden" name="data_deletion" id="data_deletion" value="N"/>
+	<input type="hidden" name="consent_required" id="consent_required" value="N"/>
+	<input type="hidden" name="consent_agreed" id="consent_agreed" value=""/>
+	<input type="hidden" name="isFormMultilingualRequired" id="isFormMultilingualRequired" value="N"/>
+	<input type="hidden" name="multilingualLanguageSelected" value="Hindi" id="multilingualLanguageSelected">
+
+<input type="hidden" name="loginHtmlPath" value="/html/form79664/login.html" id="loginHtmlPath">
+<input type="hidden" name="orgId" value="2207" id="orgId">
+<input type="hidden" name="formId" value="79664" id="formId">
+<input type="hidden" name="isPwdGenerationReq" value="N" id="isPwdGenerationReq">
+
+
+	  
+	<div id="mydiv" data-multilingualid="" data-multilingualdisplaytype="html"></div>
+	
+
+
+
+<div id="login1">
+<span data-staticKey="Please Enter UserId" id="loginalert1" style="display:none">Please Enter UserId </span></div>
+<div id="login2">
+<span data-staticKey="Please Enter Password." id="loginalert2" style="display:none">Please Enter Password. </span></div>
+<div id="login3">
+<span data-staticKey="Please enter the Captcha." id="loginalert3" style="display:none">Please enter the Captcha. </span></div>
+<div id="login4">
+<span data-staticKey="Please enter correct text shown in image" id="loginalert4" style="display:none">Please enter correct text shown in image </span></div>
+
+	
+   </form>	
+</body>
+  </html>
