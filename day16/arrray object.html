@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>example of the arrays object</h1>
+    <p id="demo"></p>
+    <script>
+      const cars = [
+        { type: "valvo", year: 2016 },
+        { type: "bmw", year: 2017 },
+        { type: "saab", year: 2018 },
+      ];
+      cars.sort(function (a, b) {
+        console.log("value of a is::", a);
+        console.log("valueof b is::", b);
+        return b.year - a.year;
+      });
+      document.getElementById("demo").innerHTML =`car :</br>
+      1.type : ${cars[0].type}   year : ${year[0].year}</br>
+      2.type : ${cars[1].type}   year : ${year[1].year} </br>
+      3. type: ${cars[2].type}   year : ${year[2].year} </br>
+      `;
+    </script>
+  </body>
+</html>

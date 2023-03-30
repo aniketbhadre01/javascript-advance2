@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1> arrays sorting number </h1>
+<p id="demo"></p>
+<script>
+    const numarray= [4,6,8,1,2,7,1000000000000000000000000000000000000000000000000000000000000000000000000];
+    numarray.sort(function(a,b){
+        console.log ("value of a is ::",a);
+        console.log("value of bis::",b);
+        console.log("value of the a-b", a-b);
+        return a-b;
+    });
+    document.getElementById("demo").innerHTML=numarray.join("|");
+</script>  
+</body>
+</html>
