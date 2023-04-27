@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // first we take the function and asssigh rotaterightone (array)
+      function rotateRightOne(arr) {
+        const lastElement = arr[arr.length - 1];
+        //take length of last element of arrays is constant and tempory variable
+        //set each element value
+        for (let i = arr.length - 2; i >= 0; i--) {
+          arr[i + 1] = arr[i];
+        }
+        arr[0] = lastElement;
+        return arr;
+      }
+
+      // Example usage
+      const myArray = [1, 2, , 3, 4, ];
+      console.log(rotateRightOne(myArray)); // Output: [5, 1, 2, 3, 4 ];
+
+      //Store the last element of the array in a temporary variable.
+      //Iterate over the array from the second last element to the first element.
+      //Set each element to the value of the element before it.
+      //Set the first element of the array to the value of the temporary variable
+    </script>
+  </body>
+</html>

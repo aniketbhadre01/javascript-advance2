@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addstring(num1, num2) {
+  let result = ""; // Initialize an empty string for the result
+  let carry = 0; // Initialize the carry variable to 0
+  
+  // Loop through the digits of the numbers from right to left
+  for (let i = num1.length - 1, j = num2.length - 1; i >= 0 || j >= 0 || carry > 0; i--, j--) {
+    // Get the current digits of the numbers, or 0 if there are no more digits
+    let digit1 = i >= 0 ? parseInt(num1[i]) : 0;
+    let digit2 = j >= 0 ? parseInt(num2[j]) : 0;
+    
+    // Add the digits and the carry
+    let sum = digit1 + digit2 + carry;
+    
+    // If the sum is greater than 9, set the carry to 1 and subtract 10 from the sum
+    if (sum > 9) {
+      carry = 1;
+      sum -= 10;
+    } else {
+      carry = 0;
+    }
+    
+    // Add the current digit to the result string
+    result = sum.toString() + result;
+  }
+  
+  // Return the result string
+  return result;
+}
+
+    </script>
+</body>
+</html>
