@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // if the discount bill of the persone is more than the or equal the discount price
+      //of then print give him discount 10% other wise print total value of bill
+
+      let total_bill = 750;
+      let discount_price = 699;
+      if (total_bill>=discount_price) {
+        console.log("give him discount 10%");
+        let new_bill = total_bill - discount_price * 0.1;
+        console.log(new_bill);
+      } else {
+        console.log("print the total amount of bill");
+      }
+    </script>
+  </body>
+</html>
