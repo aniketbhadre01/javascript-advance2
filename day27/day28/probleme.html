@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // print the first 10 fibonacci number without recursion
+
+function fibonacci(n) {
+    var fibNumbers = [0, 1];  // Initialize the array with the first two Fibonacci numbers
+  
+    for (var i = 2; i < n; i++) {
+      fibNumbers.push(fibNumbers[i - 1] + fibNumbers[i - 2]);
+    }
+  
+    return fibNumbers;
+  }
+  
+  // Print the first 10 Fibonacci numbers up to the 10th number
+  var fibonacciNumbers = fibonacci(10);
+  for (var i = 1; i <fibonacciNumbers.length; i++) {
+    if (i === 9) {
+      break; // Break the loop after printing the 10th number
+    }
+    console.log(fibonacciNumbers[i]);
+  }
+  </script>
+</body>
+</html>
+
+
+
+
