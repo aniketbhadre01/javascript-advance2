@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //print the avrage of the even number from 1 to 100 (both include)
+      let sumOfEvens = 0;
+      let countOfEvens = 0;
+      let num = 1;
+      while (num<=100) {
+        if (num%2=== 0) {
+          sumOfEvens+=num;
+          countOfEvens++;
+        }
+        num++;
+      }
+      const average = sumOfEvens / countOfEvens;
+      // console value
+
+      console.log("average of even number from 1 to 100:", average);
+    </script>
+  </body>
+</html>
