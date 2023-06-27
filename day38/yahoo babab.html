@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arrya = [
+        ["aniket", 23, "male", " b.sc"],
+
+        ["vaibhav", 23, "female", "mca"],
+
+        ["shivam", 26, "shemale", "msc"],
+
+        ["sham", 45, "undefine", "d-pharma"],
+      ];
+      document.write(arrya.length);
+      document.writen("<table border ='1px' cellspacing '0'>");
+
+      for (var a = 0; a < arrya.length; a++) {
+        document.write("<tr>"); // table row define here
+        for (var b = 0; b < arrya[a].length; b++) {
+          document.write("<td" + arrya[a][b] + "</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

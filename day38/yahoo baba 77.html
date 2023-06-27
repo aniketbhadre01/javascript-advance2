@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     var array = [
+  ["aniket", 18, "male", "b.sc"],
+  ["sunny", 19, "male", "BA"],
+  ["rohan", 23, "male", "b.voc"],
+  ["vaibhav", 23, "male", "mca"],
+  ["anna" ,150, "male", "dr"]
+];
+
+document.write(array.length);
+
+document.write("<table border='1px' cellspacing='0'>");
+
+for (var a = 0; a < array.length; a++) {
+  document.write("<tr>");
+
+  for (var b = 0; b < 4; b++) {
+    document.write("<td>" + array[a][b] + "</td>");
+  }
+
+  document.write("</tr>");
+}
+
+document.write("</table>");
+    </script>
+  </body>
+</html>
