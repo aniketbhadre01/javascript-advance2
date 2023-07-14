@@ -1,0 +1,40 @@
+/* Styling for the outer div */
+#outer {
+          background-color: lightgray;
+          padding: 20px;
+        }
+        
+        /* Styling for the inner div */
+        #outer > div {
+          background-color: white;
+          padding: 10px;
+          margin-top: 10px;
+        }
+        
+        /* Styling for the inner h2 */
+        #outer > div > h2 {
+          color: blue;
+        }
+        
+        /* Styling for the child-c div */
+        #child-c {
+          background-color: yellow;
+          padding: 5px;
+        }
+        
+        /* Styling for the other divs inside the inner div */
+        #outer > div > div {
+          background-color: lightblue;
+          padding: 5px;
+          margin-top: 5px;
+        }
+        
+        /* Additional styling for specific divs */
+        div#outer h2 {
+          font-size: 20px;
+        }
+        
+        div#outer > div > div {
+          font-weight: bold;
+        }
+        
